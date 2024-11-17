@@ -12,7 +12,7 @@ const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
-const port =  3001;
+const port =  process.env.PORT || 3001;
 
 app.use(cookieParser());
 // app.use(express.static('public'));
@@ -38,3 +38,4 @@ server.listen(port, () => {
     console.log("Connected success port: " + port);
 });
 
+export default app
